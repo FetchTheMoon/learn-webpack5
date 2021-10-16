@@ -1,4 +1,4 @@
-import 'css-loader!../css/login.css'; // You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file.
+import '../css/login.css'; // You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file.
 
 function login() {
     const h2 = document.createElement('h2');
