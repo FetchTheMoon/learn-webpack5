@@ -13,7 +13,13 @@ module.exports = {
                 test: /\.css$/, // 用于匹配文件类型的正则表达式
                 use: [
                     'style-loader',
-                    'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options:{
+                            importLoaders: 1
+
+                        }
+                    },
                     'postcss-loader'
                 ], // loader的执行顺序是从右到左, 从下到上, 先执行的loader会将处理结果传递给下一个loader
             },
@@ -24,6 +30,12 @@ module.exports = {
                     'css-loader',
                     'postcss-loader',
                     'less-loader'],
+                /*
+                * importLoaders 只对未解析的@imports 有效
+                * 因此, 当将 postCSS 与 nextCSS(无 @import 解析器)一起使用时, 就需要设置 importLoaders
+                * 但是在使用 sass/less 时, 它已经处理了 @import 语句, 因此不需要 importLoaders
+                * */
+
             }
         ]
     }
