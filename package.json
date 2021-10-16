@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "webpack --entry ./src/main.js --output-path ./build"
+    "//build" : "webpack --entry src/index.js --output-path ./build",
+    "build" : "webpack"
   },
   "repository": {
     "type": "git",
