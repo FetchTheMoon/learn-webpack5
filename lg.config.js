@@ -40,13 +40,17 @@ module.exports = {
                 * */
 
             },
+            // {
+            //     test: /\.(png|jpe?g|svg|gif)$/,
+            //     type: 'asset/resource', // 拷贝到指定路径
+            //     generator: {
+            //         filename: 'img/[name].[hash:6][ext]', // 指定对于当前指定文件资源打包输出的目录
+            //     }
+            // },
             {
                 test: /\.(png|jpe?g|svg|gif)$/,
-                type: 'asset/resource', // 拷贝到指定路径
-                generator: {
-                    filename: 'img/[name].[hash:6][ext]', // 指定对于当前指定文件资源打包输出的目录
-                }
-            }
+                type: 'asset/inline', // 处理成base64
+            },
         ]
     }
 }
