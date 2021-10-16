@@ -11,12 +11,7 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/, // 用于匹配文件类型的正则表达式
-                use: [
-                    {
-                        loader: 'css-loader',
-                        // options: [] // loader的配置
-                    }
-                ]
+                loader: 'css-loader',
             }
         ]
     }
