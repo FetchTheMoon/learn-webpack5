@@ -1,5 +1,4 @@
+@import "test.css";
 .title{
-    transition: all .5s;
-    user-select: none;
     color: #12345678;
 }
