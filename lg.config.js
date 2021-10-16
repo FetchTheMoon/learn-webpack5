@@ -45,7 +45,7 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: '[name].[hash:8].[ext]',
+                            name: 'img/[name].[hash:8].[ext]',
                             /*
                             * [ext]: 扩展名
                             * [name]: 文件名
@@ -54,7 +54,7 @@ module.exports = {
                             * [hash:<length>]: hash保留长度
                             * [path]: 路径, 不常用
                             * */
-                            outputPath: 'img'
+                            // outputPath: 'img'
                         }
                     }
                 ],
