@@ -46,6 +46,7 @@ module.exports = {
                         loader: 'url-loader',
                         options: {
                             name: 'img/[name].[hash:8].[ext]',
+                            limit: 400 * 1024 // 超过400kb 就会拷贝到img目录下, 否则直接转为base64
                             /*
                             * [ext]: 扩展名
                             * [name]: 文件名
