@@ -1,1 +1,0 @@
-(()=>{var o={50:o=>{o.exports=()=>({name:"fet",age:22})},677:()=>{console.log("Learn webpack 5")}},e={};function r(s){var t=e[s];if(void 0!==t)return t.exports;var n=e[s]={exports:{}};return o[s](n,n.exports,r),n.exports}(()=>{"use strict";r(677);const o=r(50);console.log(30),console.log(10*10),console.log(o())})()})();
