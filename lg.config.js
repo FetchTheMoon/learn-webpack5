@@ -41,14 +41,15 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|svg|gif)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            esModule: false, // 不转换为esModule
-                        }
-                    }
-                ]
+                // use: [
+                //     {
+                //         loader: 'file-loader',
+                //         options: {
+                //             esModule: false, // 不转换为esModule
+                //         }
+                //     }
+                // ]
+                use: ['file-loader'],
             }
         ]
     }
