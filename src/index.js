@@ -10,3 +10,12 @@
 
 
 import './js/image';
+
+
+/*
+* asset 模块
+* 1. asset/resource --> file-loader
+* 2. asset/inline   --> url-loader
+* 3. asset/source   --> raw-loader(很少用
+* 4. asset
+* */

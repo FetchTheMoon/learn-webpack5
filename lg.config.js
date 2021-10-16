@@ -41,24 +41,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|svg|gif)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            name: 'img/[name].[hash:8].[ext]',
-                            limit: 400 * 1024 // 超过400kb 就会拷贝到img目录下, 否则直接转为base64
-                            /*
-                            * [ext]: 扩展名
-                            * [name]: 文件名
-                            * [hash]: md4(文件内容)
-                            * [contentHash]: 在file-loader中, 同上
-                            * [hash:<length>]: hash保留长度
-                            * [path]: 路径, 不常用
-                            * */
-                            // outputPath: 'img'
-                        }
-                    }
-                ],
+                type: 'asset/resource' // 拷贝到指定路径
             }
         ]
     }
