@@ -7,6 +7,7 @@ module.exports = {
         filename: 'main.js',
         // path: "./dist/main.js" // The provided value "./dist/main.js" is not an absolute path!
         path: path.resolve(__dirname, 'dist'),
+        assetModuleFilename: 'img/[name].[hash:6][ext]', // 这里不用自己加后缀的'.' :-)
 
     },
     module: {
