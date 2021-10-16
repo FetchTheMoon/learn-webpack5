@@ -30,7 +30,22 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                use: ['style-loader', 'css-loader', 'less-loader'],
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    { // 假设处理less文件也需要用postcss做兼容性处理, 那么此时配置就显得有些冗余了(自信点, 非常冗余)
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    // require('autoprefixer')
+                                    'postcss-preset-env'
+                                ]
+                            }
+
+                        }
+                    },
+                    'less-loader'],
             }
         ]
     }
