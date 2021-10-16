@@ -41,15 +41,22 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|svg|gif)$/,
-                // use: [
-                //     {
-                //         loader: 'file-loader',
-                //         options: {
-                //             esModule: false, // 不转换为esModule
-                //         }
-                //     }
-                // ]
-                use: ['file-loader'],
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[hash:8].[ext]'
+                            /*
+                            * [ext]: 扩展名
+                            * [name]: 文件名
+                            * [hash]: md4(文件内容)
+                            * [contentHash]: 在file-loader中, 同上
+                            * [hash:<length>]: hash保留长度
+                            * [path]: 路径, 不常用
+                            * */
+                        }
+                    }
+                ],
             }
         ]
     }
