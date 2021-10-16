@@ -3,9 +3,11 @@ const path = require('path');
 module.exports = {
     entry: './src/index.js',
     output: {
+        publicPath: '/dist/', // 用来解决浏览器报错: Automatic publicPath is not supported in this browser
         filename: 'main.js',
         // path: "./dist/main.js" // The provided value "./dist/main.js" is not an absolute path!
         path: path.resolve(__dirname, 'dist'),
+
     },
     module: {
         rules: [
@@ -15,7 +17,7 @@ module.exports = {
                     'style-loader',
                     {
                         loader: 'css-loader',
-                        options:{
+                        options: {
                             importLoaders: 1
 
                         }
@@ -36,6 +38,10 @@ module.exports = {
                 * 但是在使用 sass/less 时, 它已经处理了 @import 语句, 因此不需要 importLoaders
                 * */
 
+            },
+            {
+                test: /\.(png|jpe?g|svg|gif)$/,
+                use: ['file-loader']
             }
         ]
     }
