@@ -47,9 +47,21 @@ module.exports = {
             //         filename: 'img/[name].[hash:6][ext]', // 指定对于当前指定文件资源打包输出的目录
             //     }
             // },
+            // {
+            //     test: /\.(png|jpe?g|svg|gif)$/,
+            //     type: 'asset/inline', // 处理成base64
+            // },
             {
                 test: /\.(png|jpe?g|svg|gif)$/,
-                type: 'asset/inline', // 处理成base64
+                type: 'asset',
+                generator: {
+                    filename: 'img/[name].[hash:6][ext]'
+                },
+                parser: {
+                    dataUrlCondition: {
+                        maxSize: 400 * 1024 // 大于400KB则复制到目录, 否则编码为base64
+                    }
+                }
             },
         ]
     }
