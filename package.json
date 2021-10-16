@@ -18,6 +18,7 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "^10.3.7",
     "css-loader": "^6.4.0",
     "less": "^4.1.2",
     "less-loader": "^10.1.0",
