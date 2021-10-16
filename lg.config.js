@@ -7,7 +7,7 @@ module.exports = {
         filename: 'main.js',
         // path: "./dist/main.js" // The provided value "./dist/main.js" is not an absolute path!
         path: path.resolve(__dirname, 'dist'),
-        assetModuleFilename: 'img/[name].[hash:6][ext]', // 这里不用自己加后缀的'.' :-)
+        // assetModuleFilename: 'img/[name].[hash:6][ext]', // 这里不用自己加后缀的'.' :-)
 
     },
     module: {
@@ -42,7 +42,10 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|svg|gif)$/,
-                type: 'asset/resource' // 拷贝到指定路径
+                type: 'asset/resource', // 拷贝到指定路径
+                generator: {
+                    filename: 'img/[name].[hash:6][ext]', // 指定对于当前指定文件资源打包输出的目录
+                }
             }
         ]
     }
