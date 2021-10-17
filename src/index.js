@@ -1,5 +1,5 @@
-import 'core-js/stable';                // 使用useBuiltIns:'entry' 则需要自己在js中引入这两句
-import 'regenerator-runtime/runtime';   // 使用useBuiltIns:'entry' 则需要自己在js中引入这两句
+// import 'core-js/stable';                // 使用useBuiltIns:'entry' 则需要自己在js中引入这两句
+// import 'regenerator-runtime/runtime';   // 使用useBuiltIns:'entry' 则需要自己在js中引入这两句
 
 
 const title = '前端';
@@ -18,5 +18,5 @@ console.log(p1);
 foo();
 
 
-console.log('2222222');
-console.log('2222222');
+console.log('webpack-live-server');
+console.log('webpack-llllllllllllllllllllllllllllll');
