@@ -3,4 +3,12 @@ const foo = () => {
     console.log(title);
 }
 
+
+const p1 = new Promise((resolve, reject) => {
+    console.log(111);
+});
+
+console.log(p1);
+
+
 foo();
