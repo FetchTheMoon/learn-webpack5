@@ -1,6 +1,8 @@
+"use strict";
+
 var title = '前端';
 
-var foo = function () {
+var foo = function foo() {
   console.log(title);
 };
 
