@@ -1,6 +1,6 @@
-const title = '前端';
+var title = '前端';
 
-const foo = function () {
+var foo = function () {
   console.log(title);
 };
 
