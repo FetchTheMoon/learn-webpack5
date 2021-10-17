@@ -1,4 +1,6 @@
-import './js/Font';
-import './js/image';
-import './js/login';
-import './js/lg';
+const title = '前端';
+const foo = () => {
+    console.log(title);
+}
+
+foo();
