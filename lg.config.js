@@ -78,6 +78,7 @@ module.exports = {
             },
             {
                 test: /\.js$/,
+                exclude: /node_modules/, // 防止将mode_modules中包含的语句也polyfill了
                 use: [
                     'babel-loader',
                 ]
