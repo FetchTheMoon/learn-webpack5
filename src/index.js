@@ -18,5 +18,5 @@ console.log(p1);
 foo();
 
 
-console.log('2222222');
-console.log('2222222');
+console.log('webpack-live-server');
+console.log('webpack-llllllllllllllllllllllllllllll');

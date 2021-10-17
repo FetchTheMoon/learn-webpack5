@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "//build": "webpack --entry src/index.js --output-path ./build",
     "///build": "webpack",
-    "build": "webpack --config lg.config.js"
+    "build": "webpack --config lg.config.js",
+    "serve": "webpack serve --config lg.config.js"
   },
   "repository": {
     "type": "git",
