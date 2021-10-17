@@ -85,7 +85,7 @@ module.exports = {
                         //     '@babel/plugin-transform-block-scoping',
                         // ]
                         presets:[
-                            '@babel/preset-env'
+                            ['@babel/preset-env', {targets:'> 19%'}]
                         ]
                     }
                 }]
