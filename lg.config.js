@@ -5,17 +5,13 @@ const { DefinePlugin } = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    watch: true,
+    // watch: true,
     mode: 'development',
     devtool: false,
     entry: './src/index.js',
     output: {
-        // publicPath: '/dist/', // 用来解决浏览器报错: Automatic publicPath is not supported in this browser
         filename: 'js/main.js',
-        // path: "./dist/main.js" // The provided value "./dist/main.js" is not an absolute path!
         path: path.resolve(__dirname, 'dist'),
-        // assetModuleFilename: 'img/[name].[hash:6][ext]', // 这里不用自己加后缀的'.' :-)
-
     },
     devServer:{
         hot: true, // 打开热更新
