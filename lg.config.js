@@ -6,6 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'development',
+    devtool: false,
     entry: './src/index.js',
     output: {
         // publicPath: '/dist/', // 用来解决浏览器报错: Automatic publicPath is not supported in this browser
