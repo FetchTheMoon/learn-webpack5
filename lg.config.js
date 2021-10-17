@@ -1,6 +1,7 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { DefinePlugin } = require('webpack');
 
 module.exports = {
     entry: './src/index.js',
@@ -64,8 +65,8 @@ module.exports = {
                         maxSize: 400 * 1024 // 大于400KB则复制到目录, 否则编码为base64
                     }
                 }
-            },{
-                test:/\.(ttf|woff2?)$/,
+            }, {
+                test: /\.(ttf|woff2?)$/,
                 type: 'asset/resource',
                 generator: {
                     filename: 'font/[name].[hash:5][ext]'
@@ -73,12 +74,17 @@ module.exports = {
             }
         ]
     },
-    plugins:[
+    plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin(
             {
                 title: "?",
                 template: './public/index.html'
+            }
+        ),
+        new DefinePlugin(
+            {
+                BASE_URL: '"./"', // 希望它以字符串的形式出现, 应该用引号包一层
             }
         ),
     ]
