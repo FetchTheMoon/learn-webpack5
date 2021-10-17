@@ -17,6 +17,9 @@ module.exports = {
         // assetModuleFilename: 'img/[name].[hash:6][ext]', // 这里不用自己加后缀的'.' :-)
 
     },
+    devServer:{
+        hot: true, // 打开热更新
+    },
     module: {
         rules: [
             {
