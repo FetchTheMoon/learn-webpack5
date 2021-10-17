@@ -85,7 +85,10 @@ module.exports = {
                         //     '@babel/plugin-transform-block-scoping',
                         // ]
                         presets:[
-                            ['@babel/preset-env', {targets:'> 19%'}]
+                            [
+                                '@babel/preset-env',
+                                // {targets:'> 19%'} // webpack中对babel的配置,会覆盖了.browserslistrc的配置
+                            ]
                         ]
                     }
                 }]
