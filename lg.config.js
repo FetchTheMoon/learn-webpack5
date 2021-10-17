@@ -77,7 +77,8 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin(
             {
-                title: "?"
+                title: "?",
+                template: './public/index.html'
             }
         ),
     ]
