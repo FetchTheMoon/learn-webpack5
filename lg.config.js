@@ -67,12 +67,25 @@ module.exports = {
                         maxSize: 400 * 1024 // 大于400KB则复制到目录, 否则编码为base64
                     }
                 }
-            }, {
+            },
+            {
                 test: /\.(ttf|woff2?)$/,
                 type: 'asset/resource',
                 generator: {
                     filename: 'font/[name].[hash:5][ext]'
                 }
+            },
+            {
+                test:/\.js$/,
+                use:[{
+                    loader:'babel-loader',
+                    options: {
+                        plugins:[
+                            '@babel/plugin-transform-arrow-functions',
+                            '@babel/plugin-transform-block-scoping',
+                        ]
+                    }
+                }]
             }
         ]
     },
