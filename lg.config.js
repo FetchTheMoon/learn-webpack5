@@ -76,22 +76,10 @@ module.exports = {
                 }
             },
             {
-                test:/\.js$/,
-                use:[{
-                    loader:'babel-loader',
-                    options: {
-                        // plugins:[
-                        //     '@babel/plugin-transform-arrow-functions',
-                        //     '@babel/plugin-transform-block-scoping',
-                        // ]
-                        presets:[
-                            [
-                                '@babel/preset-env',
-                                // {targets:'> 19%'} // webpack中对babel的配置,会覆盖了.browserslistrc的配置
-                            ]
-                        ]
-                    }
-                }]
+                test: /\.js$/,
+                use: [
+                    'babel-loader',
+                ]
             }
         ]
     },
