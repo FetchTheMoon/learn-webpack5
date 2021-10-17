@@ -2,12 +2,13 @@ const path = require('path');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { DefinePlugin } = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
     output: {
-        publicPath: '/dist/', // 用来解决浏览器报错: Automatic publicPath is not supported in this browser
-        filename: 'main.js',
+        // publicPath: '/dist/', // 用来解决浏览器报错: Automatic publicPath is not supported in this browser
+        filename: 'js/main.js',
         // path: "./dist/main.js" // The provided value "./dist/main.js" is not an absolute path!
         path: path.resolve(__dirname, 'dist'),
         // assetModuleFilename: 'img/[name].[hash:6][ext]', // 这里不用自己加后缀的'.' :-)
@@ -87,5 +88,17 @@ module.exports = {
                 BASE_URL: '"./"', // 希望它以字符串的形式出现, 应该用引号包一层
             }
         ),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: './public',
+                    // to:'', 可以不写, 默认指向webpack.output.path
+                    globOptions: {
+                        // 来自官网文档, Technically, this is **/* with a predefined context equal to the specified directory.
+                        ignore: ['**/index.html']
+                    }
+                }
+            ]
+        })
     ]
 }
