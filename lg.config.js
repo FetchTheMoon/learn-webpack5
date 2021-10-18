@@ -18,6 +18,12 @@ module.exports = {
         // publicPath: '.', // 地址为: './js/main.js'  等于 [protocol]://[hostname]/[path]/[publicPath]
         // publicPath: './' // 地址为: './js/main.js'  等于 [protocol]://[hostname]/[path/]/[publicPath]
     },
+    resolve: {
+        alias: {
+            'JsFiles': path.resolve(__dirname, 'src/js')
+        }
+    },
+
     devServer: {
         hot: true, // 打开热更新
         port: 10086, // 端口
@@ -33,7 +39,7 @@ module.exports = {
                 secure: false, // 关闭ssl检查
             },
 
-        }
+        },
 
     },
     module: {
