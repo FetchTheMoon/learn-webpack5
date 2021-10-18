@@ -20,6 +20,10 @@ module.exports = {
     },
     devServer:{
         hot: true, // 打开热更新
+        port: 10086, // 端口
+        open: true, // 自动打开浏览器,
+        compress: true, // gzip压缩
+
     },
     module: {
         rules: [
