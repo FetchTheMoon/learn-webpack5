@@ -18,11 +18,22 @@ module.exports = {
         // publicPath: '.', // 地址为: './js/main.js'  等于 [protocol]://[hostname]/[path]/[publicPath]
         // publicPath: './' // 地址为: './js/main.js'  等于 [protocol]://[hostname]/[path/]/[publicPath]
     },
-    devServer:{
+    devServer: {
         hot: true, // 打开热更新
         port: 10086, // 端口
         open: true, // 自动打开浏览器,
         compress: true, // gzip压缩
+        proxy: {
+            // https://api.github.com/users
+            // 访问 http://localhost:10086/api/users
+            '/api': {
+                target: 'https://api.github.com/',
+                pathRewrite: { '^/api': '' }, // 将/api替换为''
+                changeOrigin: true, // 改变Origin
+                secure: false, // 关闭ssl检查
+            },
+
+        }
 
     },
     module: {
