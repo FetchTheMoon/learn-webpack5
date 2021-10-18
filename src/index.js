@@ -1,6 +1,3 @@
-import {fn, str, number} from 'JsFiles/something-random.js';
+import {tsFn} from "./js/something-random2.ts";
 
-document.body.insertAdjacentHTML("beforeend", `<h1>${str}</h1>`)
-for (let i = 0; i < number; i++) {
-    fn();
-}
+tsFn();

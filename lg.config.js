@@ -45,6 +45,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.ts$/,
+                use: ['ts-loader'],
+            },
+            {
                 test: /\.css$/, // 用于匹配文件类型的正则表达式
                 use: [
                     'style-loader',
