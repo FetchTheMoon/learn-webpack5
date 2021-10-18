@@ -12,6 +12,11 @@ module.exports = {
     output: {
         filename: 'js/main.js',
         path: path.resolve(__dirname, 'dist'),
+        // 设置publicPath后, html-webpack-plugin给index.html增加的script标签的引用地址
+        // publicPath: ''   // 地址为: 'js/main.js'    等于 [protocol]://[hostname][path][publicPath]
+        // publicPath: '/', // 地址为: '/js/main.js'   等于 [protocol]://[hostname]/[publicPath] (如果引用此js的html不处于[hostname]/根目录下, 就出错了)
+        // publicPath: '.', // 地址为: './js/main.js'  等于 [protocol]://[hostname]/[path]/[publicPath]
+        // publicPath: './' // 地址为: './js/main.js'  等于 [protocol]://[hostname]/[path/]/[publicPath]
     },
     devServer:{
         hot: true, // 打开热更新
